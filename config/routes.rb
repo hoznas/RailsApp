@@ -16,6 +16,11 @@ Rails.application.routes.draw do
   get 'people', to:'people#index'
   get 'people/add'
   post 'people/add', to:'people#create'
+
+  patch 'people/edit/:id', to:'people#update'
+  get 'people/edit/:id', to:'people#edit'
+  post 'people/edit/:id', to:'people#update'
+  
   get 'people/:id', to:'people#show'
   
   get 'msgboard', to:'msgboard#index'
