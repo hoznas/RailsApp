@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   patch 'people/edit/:id', to:'people#update'
   get 'people/edit/:id', to:'people#edit'
   post 'people/edit/:id', to:'people#update'
+
+  get 'people/delete/:id', to:'people#delete'
   
   get 'people/:id', to:'people#show'
   

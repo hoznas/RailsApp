@@ -15,7 +15,18 @@
       </td>
       <td>
         <a href="/people/edit/<%= obj.id %>">Edit</a>
-      </td>
+        &nbsp;&nbsp;
+        <a href="javascript:delData(<%= obj.id %>);">
+          Delete</a>
+        </td>
     </tr>
   <% end %>
+  <script>
+  function delData(num){
+    if (confirm("delete this data?")){
+      document.location = "/people/delete/"+num;
+    }
+    return false;
+  }
+  </script>
 </table>

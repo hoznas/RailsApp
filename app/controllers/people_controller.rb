@@ -19,12 +19,18 @@ class PeopleController < ApplicationController
   end
   def edit
     @msg = "edit data.[id = " + params[:id] + "]"
-    @person = Person.find [params[:id]]
+    @person = Person.find params[:id]
   end
   def update
     obj = Person.find(params[:id])
     obj.update(person_params)
     redirect_to "/people"
+  end
+  def delete
+    obj = Person.find(params[:id])
+    p [obj.class,obj]
+    obj.destroy
+    redirect_to '/people'
   end
 
   private
