@@ -28,7 +28,6 @@ class PeopleController < ApplicationController
   end
   def delete
     obj = Person.find(params[:id])
-    p [obj.class,obj]
     obj.destroy
     redirect_to '/people'
   end
