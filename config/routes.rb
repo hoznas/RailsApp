@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'messages/index'
+  get 'messages/show'
+  get 'messages/add'
+  get 'messages/edit'
   get 'cards/index'
   get 'cards/show'
   get 'cards/add'
@@ -20,6 +24,8 @@ Rails.application.routes.draw do
   get 'people', to:'people#index'
   get 'people/add'
   post 'people/add', to:'people#create'
+  get 'people/find'
+  post 'people/find'
 
   patch 'people/edit/:id', to:'people#update'
   get 'people/edit/:id', to:'people#edit'

@@ -18,8 +18,8 @@
     <%= form.text_field :publisher,{class:"form-control"} %>
   </div>
   <div class="form-group">
-    <label for="Memo">Memo</label>
-    <%= form.text_field :memo,{class:"form-control"} %>
+    <label for="memo">Memo</label>
+    <%= form.text_area :memo,{crows:5, lass:"form-control"} %>
   </div>
   <%= form.submit "update" %>
 <% end %>
