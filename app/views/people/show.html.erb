@@ -5,6 +5,17 @@
   <tr><th>Name</th><td><%= @data.name %></td></tr>
   <tr><th>Age</th><td><%= @data.age %></td></tr>
   <tr><th>Mail</th><td><%= @data.mail %></td></tr>
+  <tr>
+    <th>Message</th>
+    <td>
+      <% if @data.message != nil %>
+        <% @data.message.each do |obj| %>
+          <%= "[" + obj.message + "]" %>
+        <% end %>
+      <% end %>
+    </td>
+  </tr>
+</table>
 
 
 

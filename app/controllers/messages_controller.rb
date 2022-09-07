@@ -15,9 +15,18 @@ class MessagesController < ApplicationController
     @message = Message.new
   end
 
+  def create
+    @message = Message.new message_params
+    if @message.save
+      redirect_to "/messages"
+    else
+      render "add"
+    end
+  end
+
   def edit
     @msg = "edit data. [id=" + params[:id] + "]"
-    @message = MEssages.find(params[:id])
+    @message = Message.find(params[:id])
   end
   
   def update
@@ -29,7 +38,7 @@ class MessagesController < ApplicationController
   def delete 
     obj = Message.find(params[:id])
     obj.destroy
-    redirect_to "/message"
+    redirect_to "/messages"
   end
 
   private 
